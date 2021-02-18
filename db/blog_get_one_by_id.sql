@@ -1,0 +1,1 @@
+SELECT * FROM path_blog WHERE blog_id = 3;
