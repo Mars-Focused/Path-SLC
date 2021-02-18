@@ -4,6 +4,8 @@ DROP TABLE IF EXISTS path_blog;
 DROP TABLE IF EXISTS path_announcements;
 DROP TABLE IF EXISTS path_admin;
 
+set timezone TO 'MST';
+
 CREATE TABLE path_ml(
   student_id SERIAL PRIMARY KEY,
   student_email VARCHAR(200) UNIQUE NOT NULL,
