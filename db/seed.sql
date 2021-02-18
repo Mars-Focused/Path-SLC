@@ -6,10 +6,10 @@ DROP TABLE IF EXISTS path_admin;
 
 CREATE TABLE path_ml(
   student_id SERIAL PRIMARY KEY,
- student_email VARCHAR(200) UNIQUE NOT NULL,
+  student_email VARCHAR(200) UNIQUE NOT NULL,
   scene_name VARCHAR(100) NOT NULL,
   legal_name VARCHAR(100) NOT NULL,
-  verified BOOLEAN NOT NULL
+  verified BOOLEAN default false
 );
 
 CREATE TABLE path_events(
@@ -50,11 +50,11 @@ VALUES
 
 
 INSERT INTO path_ml
-(student_email, scene_name, legal_name, verified)
+(student_email, scene_name, legal_name)
 VALUES
-('BlueLynx@live.com', 'Mars_A', 'Marshall Aaron Clarke', true),
-('marsthecoder@outlook.com', 'Mars_A', 'Marshall Aaron Clarke', false),
-('marshallaclarke@gmail.com', 'Mars_A', 'Marshall Aaron Clarke', false);
+('BlueLynx@live.com', 'Mars_A', 'Marshall Aaron Clarke'),
+('marsthecoder@outlook.com', 'Mars_A', 'Marshall Aaron Clarke'),
+('marshallaclarke@gmail.com', 'Mars_A', 'Marshall Aaron Clarke');
 
 INSERT INTO path_blog
 (blog_date_time, blog_title, blog_content)
