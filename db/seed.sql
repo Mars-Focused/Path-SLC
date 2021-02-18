@@ -48,7 +48,9 @@ INSERT INTO path_events
 VALUES 
 ('14 Apr 2021 4:20am', 'Mars Birthday', 'we will be celebrating the birthday of the man who made this website', 'Contact mars for event location'),
 ('18 March 2021 7:00pm', 'Path Virtual Munch', 'First ACTUAL event to be posted on this site', 'Join our Mailing list to get the Location'),
-('24 March 2021 7:00pm', 'Path Virtual Munch', 'Second event to be posted on this site', 'Join our Mailing list to get the Location');
+('24 March 2021 7:00pm', 'Path Virtual Munch', 'Second event to be posted on this site', 'Join our Mailing list to get the Location'),
+('24 March 2019 7:00pm', 'past event', 'Test event to be posted on this site', 'Join our Mailing list to get the Location'),
+('24 March 2030 7:00pm', 'future event', 'Test event to be posted on this site', 'Join our Mailing list to get the Location');
 
 
 INSERT INTO path_ml
