@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS path_admin;
 
 CREATE TABLE path_ml(
   student_id SERIAL PRIMARY KEY,
-  email VARCHAR(200) UNIQUE NOT NULL,
+ student_email VARCHAR(200) UNIQUE NOT NULL,
   scene_name VARCHAR(100) NOT NULL,
   legal_name VARCHAR(100) NOT NULL,
   verification BOOLEAN NOT NULL
@@ -50,9 +50,9 @@ VALUES
 
 
 INSERT INTO path_ml
-(email, scene_name, legal_name, verification)
+(student_email, scene_name, legal_name, verification)
 VALUES
-('BlueLynx@live.com', 'Mars_A', 'Marshall Aaron Clarke', false),
+('BlueLynx@live.com', 'Mars_A', 'Marshall Aaron Clarke', true),
 ('marsthecoder@outlook.com', 'Mars_A', 'Marshall Aaron Clarke', false),
 ('marshallaclarke@gmail.com', 'Mars_A', 'Marshall Aaron Clarke', false);
 
