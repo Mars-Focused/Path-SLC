@@ -1,1 +1,1 @@
-SELECT * FROM path_blog WHERE blog_id = 3;
+SELECT * FROM path_blog WHERE blog_id = $1;

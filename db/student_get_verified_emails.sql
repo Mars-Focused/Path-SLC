@@ -1,1 +1,1 @@
-SELECT student_email FROM path_ml WHERE verification = TRUE
+SELECT student_email FROM path_ml WHERE verified = TRUE

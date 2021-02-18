@@ -9,7 +9,7 @@ CREATE TABLE path_ml(
  student_email VARCHAR(200) UNIQUE NOT NULL,
   scene_name VARCHAR(100) NOT NULL,
   legal_name VARCHAR(100) NOT NULL,
-  verification BOOLEAN NOT NULL
+  verified BOOLEAN NOT NULL
 );
 
 CREATE TABLE path_events(
@@ -50,7 +50,7 @@ VALUES
 
 
 INSERT INTO path_ml
-(student_email, scene_name, legal_name, verification)
+(student_email, scene_name, legal_name, verified)
 VALUES
 ('BlueLynx@live.com', 'Mars_A', 'Marshall Aaron Clarke', true),
 ('marsthecoder@outlook.com', 'Mars_A', 'Marshall Aaron Clarke', false),
