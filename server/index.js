@@ -1,6 +1,9 @@
 require("dotenv").config();
-const express = require("express-session");
+const express = require("express");
+const session = require("express-session");
 const massive = require("massive");
+const authCtrl = require("./controllers/authController");
+const Leila = require("./leila/leila");
 
 const PORT = 6000;
 
@@ -16,7 +19,7 @@ massive({
 }).then((db) => {
   app.set("db", db);
   console.log(`Database Connected on port ${PORT}`);
-  //   Leila.Fox(PORT, "Mars", false); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
+  Leila.Fox(PORT, "Mars", false); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
 });
 
 app.use(
@@ -26,5 +29,7 @@ app.use(
     secret: SESSION_SECRET,
   })
 );
+
+app.post("/auth/login", authCtrl.login);
 
 app.listen(PORT, () => console.log(`...LOADING...`));

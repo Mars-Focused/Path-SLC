@@ -75,38 +75,40 @@ module.exports = {
       phraseNumber = phraseNumArr[phraseNumSelector];
       weirdNumber = phraseNumArr[0];
 
-      switch (Chaos) {
-        case 0:
-          animSpeed = 937.5;
-          break;
-        case 1:
-          animSpeed = 198.75;
-          break;
-        case 2:
-          animSpeed = 1875;
-          break;
-      }
+      // switch (Chaos) {
+      //   case 0:
+      //     animSpeed = 937.5;
+      //     break;
+      //   case 1:
+      //     animSpeed = 198.75;
+      //     break;
+      //   case 2:
+      //     animSpeed = 1875;
+      //     break;
+      // }
 
-      switch (weirdNumber % 6) {
-        case 0:
-          color = "\x1b[36m";
-          break;
-        case 1:
-          color = "\x1b[32m";
-          break;
-        case 2:
-          color = "\x1b[35m";
-          break;
-        case 3:
-          color = "\x1b[34m";
-          break;
-        case 4:
-          color = "\x1b[33m";
-          break;
-        case 5:
-          color = "\x1b[31m";
-          break;
-      }
+      // switch (weirdNumber % 6) {
+      //   case 0:
+      //     color = "\x1b[36m";
+      //     break;
+      //   case 1:
+      //     color = "\x1b[32m";
+      //     break;
+      //   case 2:
+      //     color = "\x1b[35m";
+      //     break;
+      //   case 3:
+      //     color = "\x1b[34m";
+      //     break;
+      //   case 4:
+      //     color = "\x1b[33m";
+      //     break;
+      //   case 5:
+      //     color = "\x1b[31m";
+      //     break;
+      // }
+
+      color = "\x1b[31m";
 
       // Connection ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -329,15 +331,15 @@ module.exports = {
       }
 
       if (phraseFrame == 2 && phraseNumber == 11 && phraseBit == "") {
-        phraseBit = `Focus on the Goal`;
+        phraseBit = `I'm doing my best`;
       }
 
       if (phraseFrame == 4 && phraseNumber == 11 && phraseBit == "") {
-        phraseBit = `Focus on the Goal`;
+        phraseBit = `I'm doing my best`;
       }
 
       if (phraseFrame == 6 && phraseNumber == 11 && phraseBit == "") {
-        phraseBit = `Focus on the Goal`;
+        phraseBit = `I'm doing my best`;
       }
 
       // Phrase 13 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
