@@ -1,7 +1,7 @@
 module.exports = {
-  Fox: (port, name, swimsuit) => {
+  Fox: (port, name, breasts, belly, hips) => {
     // <- Comment out these top to lines, AND the bottom two lines, to import them into your server index file.
-    // function Fox(port, name, swimsuit) {
+    // function Fox(port, name, breasts, belly, hips) {
     // <- to start/stop testing ____________________________________________________________________________________________________________
     console.clear();
     let frame = 0;
@@ -424,7 +424,7 @@ module.exports = {
       let leilaBody = "";
       let waist = ") (";
 
-      if (swimsuit == true) {
+      if (belly == 1) {
         waist = `${underscore}).(${reset}`;
       }
 
@@ -446,7 +446,7 @@ module.exports = {
       leilaSkirt = `${lightOff}   .${underscore}/( )\\${reset}. ${lightOn}\n`;
       leilaThighs = `    \\${black}_${lightOn}|${black}_${lightOn}/ \n`;
 
-      if (swimsuit == true) {
+      if (hips == 1) {
         leilaSkirt = `${lightOff}    /|_|\\${lightOn}\n`;
       }
       leila += leilaSkirt;

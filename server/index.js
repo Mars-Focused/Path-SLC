@@ -19,7 +19,7 @@ massive({
 }).then((db) => {
   app.set("db", db);
   console.log(`Database Connected on port ${PORT}`);
-  //   Leila.Fox(PORT, "Mars", true); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
+  Leila.Fox(PORT, "Mars", 0, 0, 0); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
 });
 
 app.use(
@@ -31,5 +31,6 @@ app.use(
 );
 
 app.post("/auth/login", authCtrl.login);
+app.get("/auth/logout", authCtrl.logout);
 
 app.listen(PORT, () => console.log(`...LOADING...`));

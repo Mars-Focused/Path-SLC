@@ -8,7 +8,6 @@ module.exports = {
     const foundUser = await db.admin_login([username]);
     const user = foundUser[0];
     console.log("user:", user);
-    l;
     if (!user) {
       return res
         .status(401)
@@ -27,5 +26,10 @@ module.exports = {
     };
     // console.log(req.session.user.id);
     return res.status(200).send(req.session.user); // <- sending req.session.user to the front end (Login.js line: 40)
+  },
+
+  logout: async (req, res) => {
+    req.session.destroy();
+    return res.sendStatus(200);
   },
 };
