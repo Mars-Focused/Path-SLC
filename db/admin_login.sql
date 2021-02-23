@@ -1,2 +1,2 @@
-SELECT * FROM users
-WHERE username = $1;
+SELECT * FROM path_admin
+WHERE admin_username = $1;

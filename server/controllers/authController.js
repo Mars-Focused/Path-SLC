@@ -7,7 +7,8 @@ module.exports = {
     //I removed brackets around the word username because I did not understand why they were there.
     const foundUser = await db.admin_login([username]);
     const user = foundUser[0];
-    // console.log(`authController user.user_id:`, user.user_id);
+    console.log("user:", user);
+    l;
     if (!user) {
       return res
         .status(401)
