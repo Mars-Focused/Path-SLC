@@ -1,11 +1,12 @@
 module.exports = {
-  Fox: (port, name, breasts, belly, hips) => {
+  Fox: (port, name, bust, belly, hips) => {
     // <- Comment out these top to lines, AND the bottom two lines, to import them into your server index file.
-    // function Fox(port, name, breasts, belly, hips) {
+    // function Fox(port, name, bust, belly, hips) {
     // <- to start/stop testing ____________________________________________________________________________________________________________
     console.clear();
     let frame = 0;
-    let phraseNumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+    let phraseNumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    // phraseNumArr = [14];
 
     let phraseNumSelector = 0;
     let animSpeed = 937.5;
@@ -99,7 +100,7 @@ module.exports = {
           break;
       }
 
-      // color = "\x1b[31m";
+      red = "\x1b[31m";
 
       // Connection ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -326,7 +327,7 @@ module.exports = {
 
       // Phrase 11 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 1 && phraseNumber == 11 && phraseBit == "") {
-        phraseBit = `Repeat after me`;
+        phraseBit = `Repeat after Leila`;
       }
 
       if (phraseFrame == 2 && phraseNumber == 11 && phraseBit == "") {
@@ -355,8 +356,40 @@ module.exports = {
       }
 
       // Phrase 14 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      if (phraseFrame == 4 && phraseNumber == 14 && phraseBit == "") {
-        phraseBit = `Leila Dumb`;
+      if (phraseFrame == 1 && phraseNumber == 14 && phraseBit == "") {
+        phraseBit = `feeding time Master???`;
+      }
+
+      if (
+        0 < phraseFrame == phraseFrame < 12 &&
+        phraseNumber == 14 &&
+        phraseBit == ""
+      ) {
+        armsOut = 2;
+        if (phraseFrame % 2 == 0) {
+          phraseBit = `~Suck~`;
+          mouthOpen = 1;
+        } else {
+          phraseBit = `~Lick~`;
+          mouthOpen = 2;
+        }
+      }
+
+      if (phraseFrame == 12 && phraseNumber == 14 && phraseBit == "") {
+        phraseBit = `~Gush~`;
+        mouthOpen = 1;
+      }
+
+      if (phraseFrame == 13 && phraseNumber == 14 && phraseBit == "") {
+        phraseBit = `~Gulp~`;
+      }
+
+      if (phraseFrame == 14 && phraseNumber == 14 && phraseBit == "") {
+        phraseBit = `So Tasty!`;
+      }
+
+      if (phraseFrame == 15 && phraseNumber == 14 && phraseBit == "") {
+        phraseBit = `Thank you Sir!`;
       }
 
       // Phrase 15 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -385,6 +418,31 @@ module.exports = {
         phraseBit = `Leila likes it...`;
       }
 
+      // Phrase 16 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      if (phraseFrame == 1 && phraseNumber == 16 && phraseBit == "") {
+        phraseBit = `Hey fam...`;
+      }
+
+      if (phraseFrame == 3 && phraseNumber == 16 && phraseBit == "") {
+        phraseBit = `You're effort...`;
+      }
+
+      if (phraseFrame == 4 && phraseNumber == 16 && phraseBit == "") {
+        phraseBit = `Is Meaningful...`;
+      }
+
+      if (phraseFrame == 6 && phraseNumber == 16 && phraseBit == "") {
+        phraseBit = `With effort...`;
+      }
+
+      if (phraseFrame == 7 && phraseNumber == 16 && phraseBit == "") {
+        phraseBit = `You made Leila...`;
+      }
+
+      if (phraseFrame == 9 && phraseNumber == 16 && phraseBit == "") {
+        phraseBit = `And that's valid...`;
+      }
+
       // LEILA CREATION GOES DOWN HERE!!! AFTER DECIDING WHAT SHE SAYS IF ANYTHING.
       // head and text bubble
       // IF phraseBit IS TRUE! THEN USE SPEAKING HEAD, ELSE NON-SPEAKING HEAD
@@ -406,37 +464,124 @@ module.exports = {
 
       if (mouthOpen) {
         if (mouthOpen == 1) {
-          leilaMouth = `    *\\o/* \n`;
+          leilaMouth = `    *\\${color}o${lightOn}/* \n`;
         }
         if (mouthOpen == 2) {
-          leilaMouth = `    *\\Q/* \n`;
+          leilaMouth = `    *\\${color}Q${lightOn}/* \n`;
         }
         if (mouthOpen == 3) {
-          leilaMouth = `    *\\w/* \n`;
+          leilaMouth = `    *\\${color}w${lightOn}/* \n`;
         }
       } else {
-        leilaMouth = `    *\\=/* \n`;
+        leilaMouth = `    *\\${color}=${lightOn}/* \n`;
       }
 
       leila += leilaMouth;
 
-      // shoulders, bust, waist
+      // bust, belly, hips
       let leilaBody = "";
+      let breasts = `(${underscore} Y ${reset})`;
       let waist = ") (";
 
-      if (belly == 1) {
-        waist = `${underscore}).(${reset}`;
+      switch (bust) {
+        case 1:
+          breasts = `(${underscore} V ${reset})`;
+          break;
+        case 2:
+          breasts = `(${underscore}.Y.${reset})`;
+          break;
+        case 3:
+          breasts = `(${underscore}/Y\\${reset})`;
+          break;
+        case 4:
+          breasts = `(${underscore}   ${reset})`;
+          break;
+        case 5:
+          breasts = `(${underscore} * ${reset})`;
+          break;
+        case 6:
+          breasts = `(${underscore} U ${reset})`;
+          break;
+        case 7:
+          breasts = `(${underscore}VXN${reset})`;
+          break;
+        case 8:
+          breasts = `(${underscore}???${reset})`;
+          break;
+        case 9:
+          breasts = `(${underscore}XXX${reset})`;
+          break;
+        case 10:
+          breasts = `${color}(${underscore} Y ${reset}${color})${lightOff}`;
+          break;
+        case 11:
+          breasts = `${color}(${underscore} V ${reset}${color})${lightOff}`;
+          break;
+        case 12:
+          breasts = `${color}(${underscore}.Y.${reset}${color})${lightOff}`;
+          break;
+        case 13:
+          breasts = `${color}(${underscore}/Y\\${reset}${color})${lightOff}`;
+          break;
+        case 14:
+          breasts = `${color}(${underscore}   ${reset}${color})${lightOff}`;
+          break;
+        case 15:
+          breasts = `${color}(${underscore} * ${reset}${color})${lightOff}`;
+          break;
+        case 16:
+          breasts = `${color}(${underscore} U ${reset}${color})${lightOff}`;
+          break;
+        case 17:
+          breasts = `${color}(${underscore}VXN${reset}${color})${lightOff}`;
+          break;
+        case 18:
+          breasts = `${color}(${underscore}???${reset}${color})${lightOff}`;
+          break;
+        case 19:
+          breasts = `${color}(${underscore}XXX${reset}${color})${lightOff}`;
+          break;
+        case 20:
+          breasts = `${color}(${underscore}SUK${reset}${color})${lightOff}`;
+          break;
+        case 21:
+          breasts = `${color}(${underscore}FOX${reset}${color})${lightOff}`;
+          break;
+      }
+
+      switch (belly) {
+        case 1:
+          waist = `${underscore}).(${reset}`;
+          break;
+        case 2:
+          waist = `${underscore})|(${reset}`;
+          break;
+        case 3:
+          waist = `${underscore})=(${reset}`;
+          break;
+        case 4:
+          waist = `${underscore})x(${reset}`;
+          break;
+        case 5:
+          waist = `${underscore})${color}_${lightOff}(${reset}`;
+          break;
+        case 6:
+          waist = `${lightOn}${color}) (${lightOff}${reset}`;
+          break;
+        case 7:
+          waist = `${underscore}${color})|(${lightOff}${reset}`;
+          break;
       }
 
       switch (armsOut) {
         case 0:
-          leilaBody = `    .-"-. \n  ${black} /${lightOff}(${underscore} Y ${reset})${lightOn}${black}\\ \n${black}   \\\\${lightOff}${waist}${lightOn}${black}// \n`;
+          leilaBody = `    .-"-. \n  ${black} /${lightOff}${breasts}${lightOn}${black}\\ \n${black}   \\\\${lightOff}${waist}${lightOn}${black}// \n`;
           break;
         case 1:
-          leilaBody = `    .-"-. \n  ${black} /${lightOff}(${underscore} Y ${reset})${lightOn}${black}\\ \n${black}  // ${lightOff}${waist}${lightOn}${black} \\\\ \n`;
+          leilaBody = `    .-"-. \n  ${black} /${lightOff}${breasts}${lightOn}${black}\\ \n${black}  // ${lightOff}${waist}${lightOn}${black} \\\\ \n`;
           break;
         case 2:
-          leilaBody = `    .-"-. \n  ${black} /${lightOff}(${underscore} Y ${reset})${lightOn}${black}\\ \n${black}   " ${lightOff}${waist}${lightOn}${black} "  \n`;
+          leilaBody = `    .-"-. \n  ${black} /${lightOff}${breasts}${lightOn}${black}\\ \n${black}   " ${lightOff}${waist}${lightOn}${black} "  \n`;
           break;
       }
 
@@ -447,8 +592,35 @@ module.exports = {
       leilaThighs = `    \\${black}_${lightOn}|${black}_${lightOn}/ \n`;
 
       if (hips == 1) {
-        leilaSkirt = `${lightOff}    /|_|\\${lightOn}\n`;
       }
+
+      switch (hips) {
+        case 1:
+          leilaSkirt = `${lightOff}    /|_|\\${lightOn}\n`;
+          break;
+        case 2:
+          leilaSkirt = `${lightOff}    /${color}|_|${lightOff}\\${lightOn}\n`;
+          break;
+        case 3:
+          leilaSkirt = `${lightOff}    / V \\${lightOn}\n`;
+          break;
+        case 4:
+          leilaSkirt = `${lightOff}    / ${color}V${lightOff} \\${lightOn}\n`;
+          break;
+        case 5:
+          leilaSkirt = `${lightOff}    /${color}\\_/${lightOff}\\${lightOn}\n`;
+          break;
+        case 6:
+          leilaSkirt = `${lightOff}${color}   .${underscore}/( )\\${reset}${color}. ${lightOff}${lightOn}\n`;
+          break;
+        case 7:
+          leilaSkirt = `${lightOff}${color}    ${underscore}//|\\\\${reset}${color}  ${lightOff}${lightOn}\n`;
+          break;
+        case 8:
+          leilaSkirt = `${lightOff}    / Y \\${lightOn}\n`;
+          break;
+      }
+
       leila += leilaSkirt;
       leila += leilaThighs;
 
@@ -487,5 +659,5 @@ module.exports = {
     // Wrap the equation below with a setTimeout function to delay it, rather than starting the animation immediately
     leilaAnimation();
   },
-  // Fox(5000, "Mars");
+  // Fox(5000, "Mars", 10, 6, 6);
 };
