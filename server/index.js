@@ -21,7 +21,7 @@ massive({
 }).then((db) => {
   app.set("db", db);
   console.log(`Database Connected on port ${PORT}`);
-  Leila.Fox(PORT, "Mars", 20, 1, 7); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
+  Leila.Fox(PORT, "Mars", 10, 5, 2); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
 });
 
 app.use(
@@ -32,8 +32,19 @@ app.use(
   })
 );
 
+//Login-Logout
 app.post("/auth/login", authCtrl.login);
 app.get("/auth/logout", authCtrl.logout);
+
+//Events
 app.post("/api/addEvent", auth.usersOnly, eventCtrl.addEvent);
+app.put("/api/editEvent", auth.usersOnly, eventCtrl.editEvent);
+app.get("/api/getEvents", eventCtrl.getEvents);
+
+//Students
+
+//Blog
+
+//Announcements
 
 app.listen(PORT, () => console.log(`...LOADING...`));

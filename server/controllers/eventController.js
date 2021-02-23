@@ -1,18 +1,42 @@
 module.exports = {
   addEvent: async (req, res) => {
     const {
-      event_date_time,
-      event_title,
-      event_description,
-      event_location,
+      eventDateTime,
+      eventTitle,
+      eventDescription,
+      eventLocation,
     } = req.body;
     const db = req.app.get("db");
     const response = await db.event_add(
-      event_date_time,
-      event_title,
-      event_description,
-      event_location
+      eventDateTime,
+      eventTitle,
+      eventDescription,
+      eventLocation
     );
+    return res.status(200).send(response);
+  },
+
+  editEvent: async (req, res) => {
+    const {
+      eventId,
+      eventDateTime,
+      eventTitle,
+      eventDescription,
+      eventLocation,
+    } = req.body;
+    const db = req.app.get("db");
+    const response = await db.event_edit(
+      eventId,
+      eventDateTime,
+      eventTitle,
+      eventDescription,
+      eventLocation
+    );
+    return res.status(200).send(response);
+  },
+  getEvents: async (res) => {
+    const db = req.app.get("db");
+    const response = await db.events_get();
     return res.status(200).send(response);
   },
 };
