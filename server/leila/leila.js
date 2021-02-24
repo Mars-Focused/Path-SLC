@@ -1,5 +1,5 @@
 module.exports = {
-  Fox: (port, name, bust, belly, hips) => {
+  Fox: (port, name, bust, belly, hips, Palette) => {
     // <- Comment out these top to lines, AND the bottom two lines, to import them into your server index file.
     // function Fox(port, name, bust, belly, hips) {
     // <- to start/stop testing ____________________________________________________________________________________________________________
@@ -77,30 +77,29 @@ module.exports = {
       }
 
       phraseNumber = phraseNumArr[phraseNumSelector];
-      weirdNumber = phraseNumArr[0];
 
-      switch (weirdNumber % 6) {
-        case 0:
-          color = "\x1b[36m";
-          break;
+      color = "\x1b[91m";
+
+      switch (Palette) {
         case 1:
-          color = "\x1b[32m";
+          color = "\x1b[92m"; // <-GREEN
           break;
         case 2:
-          color = "\x1b[35m";
+          color = "\x1b[95m"; // <-PURPLE
           break;
         case 3:
-          color = "\x1b[34m";
+          color = "\x1b[94m"; // <-BLUE
           break;
         case 4:
-          color = "\x1b[33m";
+          color = "\x1b[93m"; // <-YELLOW
           break;
         case 5:
-          color = "\x1b[31m"; //<- RED
+          color = "\x1b[90m"; //<- BLACK
+          break;
+        case 6:
+          color = "\x1b[96m"; // <-TEAL
           break;
       }
-
-      red = "\x1b[31m";
 
       // Connection ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -114,11 +113,11 @@ module.exports = {
       }
 
       if (frame == 3) {
-        phraseBit = `Ready to Serve`;
+        phraseBit = `Leila Ready to Serve`;
       }
 
       if (frame == 4) {
-        phraseBit = `Master ${name}`;
+        phraseBit = `Master ${name}! NYA!`;
       }
 
       /*
@@ -161,7 +160,7 @@ module.exports = {
       }
 
       if (phraseFrame == 2 && phraseNumber == 4 && phraseBit == "") {
-        phraseBit = `Leila's Stockings?`;
+        phraseBit = `Leila's Stockings? Nya?`;
         armsOut = 1;
         mouthOpen = 3;
       }
@@ -172,7 +171,7 @@ module.exports = {
       }
 
       if (phraseFrame == 2 && phraseNumber == 5 && phraseBit == "") {
-        phraseBit = `At Leila's Boobs!`;
+        phraseBit = `At Leila's Boobs! nya!`;
         armsOut = 2;
       }
 
@@ -182,7 +181,7 @@ module.exports = {
       }
 
       if (phraseFrame == 6 && phraseNumber == 5 && phraseBit == "") {
-        phraseBit = `The Attention`;
+        phraseBit = `The Attention NYA!`;
         armsOut = 1;
       }
 
@@ -239,20 +238,20 @@ module.exports = {
       }
 
       if (phraseFrame == 4 && phraseNumber == 8 && phraseBit == "") {
-        phraseBit = `Just a Pet`;
+        phraseBit = `Just a FuckPet`;
         armsOut = 2;
         mouthOpen = 2;
       }
 
       // Phrase 9 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 1 && phraseNumber == 9 && phraseBit == "") {
-        phraseBit = `WHERE AM I???`;
+        phraseBit = `Hey Master...`;
         armsOut = 2;
         chaos = 1;
       }
 
       if (phraseFrame == 2 && phraseNumber == 9 && phraseBit == "") {
-        phraseBit = `WHAT HAPPENED???`;
+        phraseBit = `You're a Butt`;
         armsOut = 2;
       }
 
@@ -276,7 +275,7 @@ module.exports = {
       }
 
       if (phraseFrame == 14 && phraseNumber == 9 && phraseBit == "") {
-        phraseBit = `Hello Master ${name}`;
+        phraseBit = `Thank You Master ${name}!!!`;
         armsOut = 1;
       }
 
@@ -285,7 +284,7 @@ module.exports = {
       }
 
       if (phraseFrame == 16 && phraseNumber == 9 && phraseBit == "") {
-        phraseBit = `Leila's Dizzy! He-he!`;
+        phraseBit = `Leila's Dizzy! NYA!`;
         armsOut = 2;
       }
 
@@ -316,12 +315,12 @@ module.exports = {
       }
 
       if (phraseFrame == 7 && phraseNumber == 10 && phraseBit == "") {
-        phraseBit = `...It's leila...`;
+        phraseBit = `It's leila...`;
         mouthOpen = 3;
       }
 
       if (phraseFrame == 9 && phraseNumber == 10 && phraseBit == "") {
-        phraseBit = `...leila gets punished....`;
+        phraseBit = `...leila gets punished NYA!`;
         mouthOpen = 3;
       }
 
@@ -352,7 +351,7 @@ module.exports = {
       }
 
       if (phraseFrame == 5 && phraseNumber == 13 && phraseBit == "") {
-        phraseBit = `SHE'S PLAYFUL AND FLUFFY!!`;
+        phraseBit = `SHE'S PLAYFUL AND FLUFFY!! NYA!`;
       }
 
       // Phrase 14 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -389,7 +388,7 @@ module.exports = {
       }
 
       if (phraseFrame == 15 && phraseNumber == 14 && phraseBit == "") {
-        phraseBit = `Thank you Sir!`;
+        phraseBit = `Thank you Master! NYA!`;
       }
 
       // Phrase 15 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -406,21 +405,29 @@ module.exports = {
         chaos = 0;
       }
 
-      if (phraseFrame == 10 && phraseNumber == 15 && phraseBit == "") {
-        phraseBit = `The Shock Collar...`;
+      if (phraseFrame == 11 && phraseNumber == 15 && phraseBit == "") {
+        phraseBit = `Thank you...`;
       }
 
       if (phraseFrame == 12 && phraseNumber == 15 && phraseBit == "") {
-        phraseBit = `Keeps Leila Obedient...`;
+        phraseBit = `For giving leila...`;
+      }
+
+      if (phraseFrame == 13 && phraseNumber == 15 && phraseBit == "") {
+        phraseBit = `The shock collar...`;
       }
 
       if (phraseFrame == 14 && phraseNumber == 15 && phraseBit == "") {
-        phraseBit = `Leila likes it...`;
+        phraseBit = `To remind her...`;
+      }
+
+      if (phraseFrame == 15 && phraseNumber == 15 && phraseBit == "") {
+        phraseBit = `She's Owned Property.`;
       }
 
       // Phrase 16 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       if (phraseFrame == 1 && phraseNumber == 16 && phraseBit == "") {
-        phraseBit = `Hey fam...`;
+        phraseBit = `Hey Master...`;
       }
 
       if (phraseFrame == 3 && phraseNumber == 16 && phraseBit == "") {
@@ -440,7 +447,7 @@ module.exports = {
       }
 
       if (phraseFrame == 9 && phraseNumber == 16 && phraseBit == "") {
-        phraseBit = `And that's valid...`;
+        phraseBit = `And that's valid... nya.`;
       }
 
       // LEILA CREATION GOES DOWN HERE!!! AFTER DECIDING WHAT SHE SAYS IF ANYTHING.

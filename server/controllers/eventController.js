@@ -34,9 +34,22 @@ module.exports = {
     );
     return res.status(200).send(response);
   },
-  getEvents: async (res) => {
+  getEvents: async (req, res) => {
     const db = req.app.get("db");
     const response = await db.events_get();
+    return res.status(200).send(response);
+  },
+
+  getOneEvent: async (req, res) => {
+    const { id } = req.params;
+    const db = req.app.get("db");
+    const response = await db.event_get_one_by_id(id);
+    return res.status(200).send(response);
+  },
+
+  getUpcomingEvent: async (req, res) => {
+    const db = req.app.get("db");
+    const response = await db.event_get_upcoming();
     return res.status(200).send(response);
   },
 };

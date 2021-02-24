@@ -13,4 +13,4 @@ AND
 (SELECT now() + interval '5 Hours' + interval '15 minutes');
 
 -- DELETE FROM path_events
--- WHERE event_title = 'Test'
+-- WHERE event_title = 'TEST'
