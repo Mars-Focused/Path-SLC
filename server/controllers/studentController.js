@@ -30,4 +30,24 @@ module.exports = {
     const response = await db.student_insert_info(email, sceneName, legalName);
     return res.status(200).send(response);
   },
+
+  verifyStudent: async (req, res) => {
+    const db = req.app.get("db");
+    const { id } = req.params;
+    const response = await db.student_update_verify(id);
+    return res.status(200).send(response);
+  },
+
+  editStudent: async (req, res) => {
+    const db = req.app.get("db");
+    const { id } = req.params;
+    const { studentEmail, sceneName, legalName } = req.body;
+    const response = await db.student_edit(
+      id,
+      studentEmail,
+      sceneName,
+      legalName
+    );
+    return res.status(200).send(response);
+  },
 };

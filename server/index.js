@@ -4,6 +4,7 @@ const session = require("express-session");
 const massive = require("massive");
 const authCtrl = require("./controllers/authController");
 const eventCtrl = require("./controllers/eventController");
+const studentController = require("./controllers/studentController");
 const studentCtrl = require("./controllers/studentController");
 const Leila = require("./leila/leila");
 const auth = require("./middleware/authMiddleware");
@@ -22,7 +23,7 @@ massive({
 }).then((db) => {
   app.set("db", db);
   console.log(`Database Connected on port ${PORT}`);
-  Leila.Fox(PORT, "Mars", 20, 1, 7, 7); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
+  Leila.Fox(PORT, "Mars", 21, 1, 7, 0); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
 });
 
 app.use(
@@ -39,7 +40,7 @@ app.get("/auth/logout", authCtrl.logout);
 
 //Events
 app.post("/api/addEvent", auth.usersOnly, eventCtrl.addEvent);
-app.put("/api/editEvent", auth.usersOnly, eventCtrl.editEvent);
+app.put("/api/editEvent/:id", auth.usersOnly, eventCtrl.editEvent);
 app.get("/api/getOneEvent/:id", eventCtrl.getOneEvent);
 app.get("/api/getTodaysEvent", eventCtrl.getUpcomingEvent);
 app.post("/api/addTestEvent", eventCtrl.addTestEvent);
@@ -55,6 +56,8 @@ app.get(
 );
 app.get("/api/getStudentEmails", auth.usersOnly, studentCtrl.getVerifiedEmails);
 app.post("/api/newStudent", auth.usersOnly, studentCtrl.newStudent);
+app.put("/api/verifyStudent/:id", auth.usersOnly, studentCtrl.verifyStudent);
+app.put("/api/editStudent/:id", auth.usersOnly, studentCtrl.editStudent);
 
 //Blog
 

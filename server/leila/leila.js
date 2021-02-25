@@ -78,13 +78,13 @@ module.exports = {
 
       phraseNumber = phraseNumArr[phraseNumSelector];
 
-      colorPicker = palette;
+      colorPicker = 0;
 
       switch (palette) {
+        case 0 || undefined:
+          colorPicker = 0;
         case 7:
-          if (frame == 1) {
-            colorPicker = Math.floor(Math.random() * (6 - 1) + 1);
-          }
+          colorPicker = Math.floor(Math.random() * (6 - 1) + 1);
         case 8:
           colorPicker = phraseNumber[0];
       }
