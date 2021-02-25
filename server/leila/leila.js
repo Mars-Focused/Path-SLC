@@ -495,7 +495,7 @@ module.exports = {
           breasts = `(${underscore} V ${reset})`;
           break;
         case 2:
-          breasts = `(${underscore}.Y.${reset})`;
+          breasts = `(${underscore}\\Y/${reset})`;
           break;
         case 3:
           breasts = `(${underscore}/Y\\${reset})`;

@@ -52,4 +52,10 @@ module.exports = {
     const response = await db.event_get_upcoming();
     return res.status(200).send(response);
   },
+
+  addTestEvent: async (req, res) => {
+    const db = req.app.get("db");
+    const response = await db.event_TEST();
+    return res.status(200).send(response);
+  },
 };
