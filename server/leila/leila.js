@@ -78,20 +78,26 @@ module.exports = {
 
       phraseNumber = phraseNumArr[phraseNumSelector];
 
-      colorPicker = 0;
+      colorPicker = palette;
 
       switch (palette) {
-        case 0 || undefined:
-          colorPicker = 0;
         case 7:
-          colorPicker = Math.floor(Math.random() * (6 - 1) + 1);
+          colorPicker = phraseNumArr[0] % 7;
+          break;
         case 8:
-          colorPicker = phraseNumber[0];
+          colorPicker = phraseNumber % 7;
+          break;
+        case 9:
+          colorPicker = frame % 7;
+          break;
       }
 
-      color = "\x1b[91m";
+      // color = "\x1b[91m";
 
       switch (colorPicker) {
+        case 0:
+          color = "\x1b[91m";
+          break;
         case 1:
           color = "\x1b[92m"; // <-GREEN
           break;
@@ -672,6 +678,7 @@ module.exports = {
       // console.log("phraseNumber:", phraseNumber);
       // console.log("phraseFrame:", phraseFrame);
       // console.log("chaos:", chaos);
+      // console.log("colorPicker:", colorPicker);
       // __________________________________________________________________________________________________________________________________________
     }
     // Wrap the equation below with a setTimeout function to delay it, rather than starting the animation immediately
