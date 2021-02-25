@@ -18,15 +18,15 @@ module.exports = {
 
   editEvent: async (req, res) => {
     const db = req.app.get("db");
+    const { id } = req.params;
     const {
-      eventId,
       eventDateTime,
       eventTitle,
       eventDescription,
       eventLocation,
     } = req.body;
     const response = await db.event_edit(
-      eventId,
+      id,
       eventDateTime,
       eventTitle,
       eventDescription,
