@@ -4,6 +4,7 @@ const session = require("express-session");
 const massive = require("massive");
 const authCtrl = require("./controllers/authController");
 const eventCtrl = require("./controllers/eventController");
+const studentCtrl = require("./controllers/studentController");
 const Leila = require("./leila/leila");
 const auth = require("./middleware/authMiddleware");
 
@@ -21,7 +22,7 @@ massive({
 }).then((db) => {
   app.set("db", db);
   console.log(`Database Connected on port ${PORT}`);
-  Leila.Fox(PORT, "Mars", 20, 1, 7, 5); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
+  // Leila.Fox(PORT, "Mars", 20, 1, 7, 5); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
 });
 
 app.use(
@@ -45,6 +46,8 @@ app.post("/api/addTestEvent", eventCtrl.addTestEvent);
 app.get("/api/getEvents", eventCtrl.getEvents);
 
 //Students
+app.delete("/api/deleteStudent/:id", auth.usersOnly, studentCtrl.deleteStudent);
+app.get("/api/getStudents", auth.usersOnly, studentCtrl.getStudents);
 
 //Blog
 

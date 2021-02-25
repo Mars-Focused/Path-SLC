@@ -1,2 +1,2 @@
 DELETE FROM path_ml
-WHERE student_id = 5;
+WHERE student_id = $1;

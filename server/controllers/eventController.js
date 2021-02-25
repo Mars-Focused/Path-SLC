@@ -17,6 +17,7 @@ module.exports = {
   },
 
   editEvent: async (req, res) => {
+    const db = req.app.get("db");
     const {
       eventId,
       eventDateTime,
@@ -24,7 +25,6 @@ module.exports = {
       eventDescription,
       eventLocation,
     } = req.body;
-    const db = req.app.get("db");
     const response = await db.event_edit(
       eventId,
       eventDateTime,
