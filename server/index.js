@@ -22,7 +22,7 @@ massive({
 }).then((db) => {
   app.set("db", db);
   console.log(`Database Connected on port ${PORT}`);
-  // Leila.Fox(PORT, "Mars", 20, 1, 7, 5); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
+  Leila.Fox(PORT, "Mars", 20, 1, 7, 7); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
 });
 
 app.use(
@@ -48,6 +48,13 @@ app.get("/api/getEvents", eventCtrl.getEvents);
 //Students
 app.delete("/api/deleteStudent/:id", auth.usersOnly, studentCtrl.deleteStudent);
 app.get("/api/getStudents", auth.usersOnly, studentCtrl.getStudents);
+app.get(
+  "/api/getUnverifiedStudents",
+  auth.usersOnly,
+  studentCtrl.getUnverifiedStudents
+);
+app.get("/api/getStudentEmails", auth.usersOnly, studentCtrl.getVerifiedEmails);
+app.post("/api/newStudent", auth.usersOnly, studentCtrl.newStudent);
 
 //Blog
 

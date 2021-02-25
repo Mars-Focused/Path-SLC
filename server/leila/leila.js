@@ -1,5 +1,5 @@
 module.exports = {
-  Fox: (port, name, bust, belly, hips, Palette) => {
+  Fox: (port, name, bust, belly, hips, palette) => {
     // <- Comment out these top to lines, AND the bottom two lines, to import them into your server index file.
     // function Fox(port, name, bust, belly, hips) {
     // <- to start/stop testing ____________________________________________________________________________________________________________
@@ -78,9 +78,20 @@ module.exports = {
 
       phraseNumber = phraseNumArr[phraseNumSelector];
 
+      colorPicker = palette;
+
+      switch (palette) {
+        case 7:
+          if (frame == 1) {
+            colorPicker = Math.floor(Math.random() * (6 - 1) + 1);
+          }
+        case 8:
+          colorPicker = phraseNumber[0];
+      }
+
       color = "\x1b[91m";
 
-      switch (Palette) {
+      switch (colorPicker) {
         case 1:
           color = "\x1b[92m"; // <-GREEN
           break;
