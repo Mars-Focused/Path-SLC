@@ -1,4 +1,4 @@
-import Login from "./Components/Login/Login";
+import Login from "./Components/AdminLogin/Login";
 import { Route, HashRouter, Switch, BrowserRouter } from "react-router-dom";
 const Router =
   process.env.NODE_ENV === "development" ? HashRouter : BrowserRouter;
