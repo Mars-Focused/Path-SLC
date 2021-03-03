@@ -1,18 +1,23 @@
 import Login from "./Components/AdminLogin/Login";
+import AdminCtrl from "./Components/AdminCtrl/AdminCtrl";
+import About from "./Components/About/About";
 import { Route, HashRouter, Switch, BrowserRouter } from "react-router-dom";
 const Router =
   process.env.NODE_ENV === "development" ? HashRouter : BrowserRouter;
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact component={Login} />
-        <Route />
-        <Route />
-        <Route />
-      </Switch>
-    </Router>
+    <div>
+      <div>Header</div>
+      <Router>
+        <Switch>
+          <Route path="/" exact component={About} />
+          <Route path="/Admin" exact component={Login} />
+          <Route path="/AdminCtrl" exact component={AdminCtrl} />
+          <Route />
+        </Switch>
+      </Router>
+    </div>
   );
 }
 
