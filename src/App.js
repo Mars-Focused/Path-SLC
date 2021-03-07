@@ -6,6 +6,7 @@ import Events from "./Components/Events/Events";
 import Blog from "./Components/Blog/Blog";
 import Announcements from "./Components/Announcements/Announcements";
 import MailList from "./Components/MailList/MailList";
+import AgeVerify from "./Components/AgeVerify/AgeVerify";
 
 import { Route, HashRouter, Switch, BrowserRouter } from "react-router-dom";
 const Router =
@@ -17,7 +18,7 @@ function App() {
       <Header />
       <Router>
         <Switch>
-          <Route path="/" exact component={About} />
+          <Route path="/" exact component={AgeVerify} />
           <Route path="/Admin" exact component={Login} />
           <Route path="/AdminCtrl" exact component={AdminCtrl} />
           <Route path="/Events" exact component={Events} />

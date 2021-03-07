@@ -3,4 +3,29 @@
   width: 100vw;
   height: 60px;
   color: #e21b22;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
+}
+
+.logo {
+  margin: 5px;
+}
+
+.header-link {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  color: red;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.header-link:hover {
+  cursor: pointer;
+  background: #220405;
 }
