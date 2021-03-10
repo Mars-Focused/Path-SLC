@@ -1,8 +1,9 @@
-import React from "react";
 import "./_Header.scss";
 import pathLogo from "../../images/path-logo-smol.png";
+import React from "react";
+import { withRouter } from "react-router-dom";
 
-export default function Header(props) {
+const Header = (props) => {
   return (
     <div className="header">
       <img className="logo" src={pathLogo} alt="" />
@@ -34,4 +35,6 @@ export default function Header(props) {
       </div>
     </div>
   );
-}
+};
+
+export default withRouter(Header);
