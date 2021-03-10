@@ -1,5 +1,5 @@
 module.exports = {
-  Fox: (port, name, bust, belly, hips, palette) => {
+  Fox: (port, name, bust, belly, hips, palette, speaks) => {
     // <- Comment out these top to lines, AND the bottom two lines, to import them into your server index file.
     // function Fox(port, name, bust, belly, hips) {
     // <- to start/stop testing ____________________________________________________________________________________________________________
@@ -77,6 +77,10 @@ module.exports = {
       }
 
       phraseNumber = phraseNumArr[phraseNumSelector];
+
+      if (speaks === false) {
+        phraseNumber = 0;
+      }
 
       colorPicker = palette;
 
@@ -658,6 +662,7 @@ module.exports = {
       }
 
       leila += leilaLegs;
+      leila += reset;
 
       switch (chaos) {
         case 0:
