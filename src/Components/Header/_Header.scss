@@ -1,7 +1,9 @@
+@import "./../style-master";
+
 .header {
   background-color: black;
   width: 100vw;
-  height: 60px;
+  height: 70px;
   color: #e21b22;
   display: flex;
   flex-direction: row;
@@ -28,4 +30,8 @@
 .header-link:hover {
   cursor: pointer;
   background: #220405;
+}
+
+.logo:hover {
+  cursor: pointer;
 }

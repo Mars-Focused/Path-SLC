@@ -6,7 +6,12 @@ import { withRouter } from "react-router-dom";
 const Header = (props) => {
   return (
     <div className="header">
-      <img className="logo" src={pathLogo} alt="" />
+      <img
+        className="logo"
+        src={pathLogo}
+        alt=""
+        onClick={() => props.history.push("/About")}
+      />
       <div className="ButtonBox">
         <button
           className="header-link"
