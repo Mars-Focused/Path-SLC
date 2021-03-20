@@ -4,7 +4,6 @@ module.exports = {
   login: async (req, res) => {
     const { username, password } = req.body;
     const db = req.app.get("db");
-    //I removed brackets around the word username because I did not understand why they were there.
     const foundUser = await db.admin_login([username]);
     const user = foundUser[0];
     // console.log("user:", user);
