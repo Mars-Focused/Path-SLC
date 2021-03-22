@@ -9,10 +9,12 @@ import MailList from "./Components/MailList/MailList";
 import AgeVerify from "./Components/AgeVerify/AgeVerify";
 import { Route, Switch } from "react-router-dom";
 
+//change the word true with a variable taken of global state that shows weather or not we're on the AgeVerify View
+
 function App() {
   return (
-    <div>
-      <Header />
+    <>
+      {true ? <Header /> : null}
       <Switch>
         <Route path="/" exact component={AgeVerify} />
         <Route path="/About" exact component={About} />
@@ -23,7 +25,7 @@ function App() {
         <Route path="/Announcements" exact component={Announcements} />
         <Route path="/MailList" exact component={MailList} />
       </Switch>
-    </div>
+    </>
   );
 }
 
