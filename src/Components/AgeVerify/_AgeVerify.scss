@@ -1,5 +1,14 @@
 @import "./../style-master";
 
+div {
+  color: $red;
+}
+
+.age-verify {
+  @include center-all;
+  height: 100vh;
+}
+
 .verify-btn {
   @include text-btn;
 }

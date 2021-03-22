@@ -3,7 +3,7 @@
 .header {
   background-color: $black;
   width: 100vw;
-  height: 70px;
+  height: 10vh;
   color: $red;
   display: flex;
   flex-direction: row;
@@ -11,6 +11,7 @@
   justify-content: space-between;
   align-content: stretch;
   align-items: center;
+  // display: none;
 }
 
 .logo {
