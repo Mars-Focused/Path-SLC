@@ -1,0 +1,41 @@
+@mixin center-all {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
+
+@mixin center-top {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: center;
+}
+
+@mixin top-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: flex-start;
+}
+
+@mixin text-btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  color: #e21b22;
+  cursor: pointer;
+  display: inline-block;
+}
+
+@mixin text-btn-hover {
+  cursor: pointer;
+  background: #220405;
+}

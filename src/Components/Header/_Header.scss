@@ -18,18 +18,11 @@
 }
 
 .header-link {
-  border: none;
-  background-color: inherit;
-  padding: 14px 28px;
-  font-size: 16px;
-  color: red;
-  cursor: pointer;
-  display: inline-block;
+  @include text-btn();
 }
 
 .header-link:hover {
-  cursor: pointer;
-  background: #220405;
+  @include text-btn-hover();
 }
 
 .logo:hover {

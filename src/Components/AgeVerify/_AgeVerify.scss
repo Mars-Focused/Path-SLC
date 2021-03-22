@@ -1,0 +1,9 @@
+@import "./../style-master";
+
+.verify-btn {
+  @include text-btn;
+}
+
+.verify-btn:hover {
+  @include text-btn-hover;
+}
