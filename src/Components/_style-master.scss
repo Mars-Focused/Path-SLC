@@ -1,3 +1,12 @@
+$black: #000000;
+$grey: #6689a1;
+$blue: #252580;
+$red: #d00000;
+$rose: #e80036;
+$cherry: #ff101f;
+$snow: #eff1f3;
+$white: #ffffff;
+
 @mixin center-all {
   display: flex;
   flex-direction: column;
@@ -26,11 +35,14 @@
 }
 
 @mixin text-btn {
+  text-decoration: none;
+  font: menu;
   border: none;
   background-color: inherit;
   padding: 14px 28px;
   font-size: 16px;
-  color: #e21b22;
+  color: $red;
+  font-weight: normal;
   cursor: pointer;
   display: inline-block;
 }
