@@ -5,19 +5,20 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { HashRouter, BrowserRouter } from "react-router-dom";
+import store from "./Redux/store.js";
 const Router =
   process.env.NODE_ENV === "development" ? HashRouter : BrowserRouter;
 
 // import "./main.css";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <Router>
-        <App />
-      </Router>
-    </React.StrictMode>
-  </Provider>,
+  // <Provider store={store}>
+  <React.StrictMode>
+    <Router>
+      <App />
+    </Router>
+  </React.StrictMode>,
+  // </Provider>,
   document.getElementById("root")
 );
 
