@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./_Login.scss";
 import { withRouter } from "react-router-dom";
 
 const Login = (props) => {
@@ -25,18 +26,18 @@ const Login = (props) => {
     <div className="login">
       <input
         type="text"
-        className="username-input"
+        className="text-input"
         placeholder="Name"
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
         type="password"
-        className="password-input"
+        className="text-input"
         placeholder="Password"
         onChange={(e) => setPassword(e.target.value)}
       />
       <button className="login-btn" type="submit" onClick={login}>
-        login
+        LOGIN
       </button>
     </div>
   );
