@@ -18,10 +18,10 @@ module.exports = {
     if (!isAuthenticated) {
       return res.status(403).send("Incorrect password");
     }
-    // Login user Successful creating req.session.user
+    // Login user Successful, creating req.session.user
     req.session.user = {
-      id: user.user_id,
-      username: user.username,
+      id: user.admin_id,
+      username: user.admin_username,
     };
     // console.log(req.session.user.id);
     return res.status(200).send(req.session.user); // <- sending req.session.user to the front end (Login.js line: 40)

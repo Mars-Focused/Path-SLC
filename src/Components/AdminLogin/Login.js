@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
   async function login(e) {
     if (e) e.preventDefault();
     try {
+      console.log("We're Trying axios");
       const res = await axios.post("/auth/login", { username, password }); // <- axios.post to log the user in, response is req.session.user from the server, storing it in variable called user.
+      // console.log(res.data);
       if (res.data.id) {
-        props.loginUser(res.data); // <- is calling the function loginUser on userReducer.js
+        // console.log("Made it to Function!");
         props.history.push("/AdminCtrl"); // .this will end the function kind of like a return statement
       }
     } catch (e) {
