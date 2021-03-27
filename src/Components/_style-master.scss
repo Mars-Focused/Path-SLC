@@ -38,6 +38,20 @@ $white: #ffffff;
   align-items: flex-start;
 }
 
+@mixin input {
+  padding: 5px;
+  font-size: 16px;
+  border-width: 1px;
+  border-color: $black;
+  background-color: $black;
+  color: $red;
+  border-style: solid;
+  border-radius: 0px;
+  box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+  text-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+  margin: 5px;
+}
+
 @mixin text-btn {
   text-decoration: none;
   font: menu;
