@@ -7,6 +7,7 @@ const eventCtrl = require("./controllers/eventController");
 const studentCtrl = require("./controllers/studentController");
 const Leila = require("./leila/leila");
 const auth = require("./middleware/authMiddleware");
+const emailSlave = require("./emailSlave/emailSlave");
 
 const PORT = 6000;
 
@@ -32,6 +33,8 @@ app.use(
     secret: SESSION_SECRET,
   })
 );
+
+emailSlave.send();
 
 //Login-Logout
 app.post("/auth/login", authCtrl.login);
