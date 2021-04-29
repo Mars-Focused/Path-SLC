@@ -1,4 +1,5 @@
 require("dotenv").config();
+const cron = require("node-cron");
 const express = require("express");
 const session = require("express-session");
 const massive = require("massive");
@@ -34,7 +35,9 @@ app.use(
   })
 );
 
-emailSlave.send();
+cron.schedule("*/15 * * * *", () => {
+  emailSlave.send();
+});
 
 //Login-Logout
 app.post("/auth/login", authCtrl.login);
