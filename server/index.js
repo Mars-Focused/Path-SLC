@@ -36,6 +36,7 @@ app.use(
 );
 
 cron.schedule("*/15 * * * *", () => {
+  // Email-Slave Email-Slave Email-Slave Email-Slave Email-Slave Email-Slave Email-Slave Email-Slave
   emailSlave.send();
 });
 
