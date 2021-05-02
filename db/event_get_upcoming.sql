@@ -15,5 +15,7 @@ WHERE event_date_time BETWEEN
 AND
 (SELECT now() + interval '5 Hours' + interval '15 minutes' + interval '59.5 second');
 
-DELETE FROM path_events
-WHERE event_title = 'TEST'
+
+
+-- DELETE FROM path_events
+-- WHERE event_title = 'TEST'

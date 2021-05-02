@@ -63,7 +63,6 @@ app.get("/api/getStudentEmails", auth.usersOnly, studentCtrl.getVerifiedEmails);
 app.post("/api/newStudent", auth.usersOnly, studentCtrl.newStudent);
 app.put("/api/verifyStudent/:id", auth.usersOnly, studentCtrl.verifyStudent);
 app.put("/api/editStudent/:id", auth.usersOnly, studentCtrl.editStudent);
-
 //Blog
 
 //Announcements
