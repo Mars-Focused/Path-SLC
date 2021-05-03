@@ -1,10 +1,12 @@
 require("dotenv").config();
+import axios from "axios";
 const nodemailer = require("nodemailer");
 //Left off at 7:50
 
 const { GMAIL_LOGIN, PASSWORD } = process.env;
 
 module.exports = {
+  axios.get("/api/getTodaysEvent"),
   send: () => {
     //From  https://www.youtube.com/watch?v=nRwbp2QVj5Y&list=PL3EVN6lZrgEWOW-BD-SeQCOHo-eb3LeHf&index=23
     //email message options
