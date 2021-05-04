@@ -6,7 +6,7 @@ const nodemailer = require("nodemailer");
 const { GMAIL_LOGIN, PASSWORD } = process.env;
 
 function checkEvent() {
-  axios.get("/api/getTodaysEvent").then();
+  axios.get("/api/getTodaysEvent");
 }
 
 module.exports = {
