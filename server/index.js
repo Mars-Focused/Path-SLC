@@ -8,7 +8,6 @@ const eventCtrl = require("./controllers/eventController");
 const studentCtrl = require("./controllers/studentController");
 const Leila = require("./leila/leila");
 const auth = require("./middleware/authMiddleware");
-const emailSlave = require("./emailSlave/emailSlave");
 const { default: axios } = require("axios");
 
 const PORT = 6000;
@@ -37,6 +36,7 @@ app.use(
 );
 
 cron.schedule("*/15 * * * *", () => {
+  const emailSlave = require("./emailSlave/emailSlave");
   // Email-Slave Email-Slave Email-Slave Email-Slave Email-Slave Email-Slave Email-Slave Email-Slave
   emailSlave.send();
 });

@@ -5,12 +5,11 @@ const nodemailer = require("nodemailer");
 
 const { GMAIL_LOGIN, PASSWORD } = process.env;
 
-function checkEvent() {
-  axios.get("/api/getTodaysEvent");
-}
-
 module.exports = {
   send: () => {
+    const response = axios.get("/api/getTodaysEvent");
+    console.log(response);
+
     //From  https://www.youtube.com/watch?v=nRwbp2QVj5Y&list=PL3EVN6lZrgEWOW-BD-SeQCOHo-eb3LeHf&index=23
     //email message options
     const mailOptions = {
