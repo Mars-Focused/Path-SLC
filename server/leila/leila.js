@@ -1,7 +1,7 @@
 module.exports = {
   Fox: (port, name, bust, belly, hips, palette, speaks) => {
     // <- Comment out these top to lines, AND the bottom two lines, to import them into your server index file.
-    // function Fox(port, name, bust, belly, hips) {
+    // function Fox(port, name, bust, belly, hips, palette, speaks) {
     // <- to start/stop testing ____________________________________________________________________________________________________________
     console.clear();
     let frame = 0;
@@ -689,5 +689,6 @@ module.exports = {
     // Wrap the equation below with a setTimeout function to delay it, rather than starting the animation immediately
     leilaAnimation();
   },
-  // Fox(5000, "Mars", 10, 6, 6);
+
+  // Fox(5000, "Mars", 10, 6, 5, 0, true);
 };

@@ -8,7 +8,8 @@ const eventCtrl = require("./controllers/eventController");
 const studentCtrl = require("./controllers/studentController");
 const Leila = require("./leila/leila");
 const auth = require("./middleware/authMiddleware");
-const { default: axios } = require("axios");
+// const emailSlave = require("./emailSlave/emailSlave");
+const axios = require("axios");
 
 const PORT = 6000;
 
@@ -24,7 +25,7 @@ massive({
 }).then((db) => {
   app.set("db", db);
   console.log(`Database Connected on port ${PORT}`);
-  // Leila.Fox(PORT, "Mars", 14, 6, 5, 5, false); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
+  Leila.Fox(PORT, "Mars", 10, 6, 5, 0, true); //<-- Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox Leila.Fox
 });
 
 app.use(
@@ -36,7 +37,6 @@ app.use(
 );
 
 cron.schedule("*/15 * * * *", () => {
-  const emailSlave = require("./emailSlave/emailSlave");
   // Email-Slave Email-Slave Email-Slave Email-Slave Email-Slave Email-Slave Email-Slave Email-Slave
   emailSlave.send();
 });
