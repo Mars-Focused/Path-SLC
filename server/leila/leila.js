@@ -19,7 +19,7 @@ module.exports = {
     //Her animations are easy to mutate with the armsOut and mouthOpen variables
     //Mouth open will Intuitively update when phraseBit is true
     //Explore it if you would like,
-    //Copy past this into your own project,
+    //Copy paste this into your own project,
     //Have fun
     //but DO NOT! ATTEMPT TO PUSH ~YOUR~ CHANGES TO ~MY~ GITHUB WITHOUT PERMISSION.
 
